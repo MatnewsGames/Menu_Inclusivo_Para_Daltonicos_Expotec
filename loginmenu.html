@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #c7d0d8;
+            font-family: Rockwell;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #1a535c;
+            border-radius: 10px;
+            background-color: #c7d0d8;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #1a535c;
+            color: #c7d0d8;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 250px;
+        }
+
+        input {
+            padding: 5px;
+            width: 200px;
+            margin-left: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .input-group img {
+            margin-right: 0px;
+        }
+
+        .message {
+            display: none;
+            margin-top: 20px;
+            padding: 5px 10px;
+            color: #1a535c;
+            border-radius: 4px;
+            width: 230px;
+        }
+
+        #acessibilidade {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            width: 55px;
+            height: 55px;
+            margin-top: 10px;
+        }
+
+        .opcoes {
+            display: none;
+            width: 100%;
+            border-radius: 10px;
+            padding: 5px;
+            box-shadow: 0 2px 5px #1a535c;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #006d77;
+            margin: 10px;
+            margin-left: -5px;
+        }
+
+        .config {
+            display: flex;
+            position: relative;
+            justify-content: space-evenly;
+            gap: 5px;
+        }
+
+        .opt {
+            color: #1a535c;
+            display: inline-flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            padding: 5px;
+            width: 80px;
+            height: 50px;
+            border: 0px;
+            border-radius: 10px;
+            background-color: #c7d0d8;
+            cursor: pointer;
+        }
+
+        #acessibilidade .vinor2 {
+            display: flex;
+        }
+
+        .vinor2 {
+            display: flex;
+        }
+
+        .prota2,
+        .deute2,
+        .trita2,
+        .mono2 {
+            display: none;
+        }
+
+        /* Modo Visão Normal */
+
+        .container {
+            border: 2px solid #1a535c;
+            background-color: #c7d0d8;
+        }
+
+        .vinor-mode .prota2,
+        .deute2,
+        .trita2,
+        .mono2 {
+            display: none;
+        }
+
+        .vinor-mode .vinor2 {
+            display: flex;
+        }
+
+        .vinor2 {
+            display: flex;
+        }
+
+        /* Modo Protanopia */
+
+        .prota-mode .container {
+            border: 2px solid #44545d;
+            background-color: #c8d1d9;
+        }
+
+        .prota-mode .voltar {
+            background-color: #44545d;
+        }
+
+        .prota-mode .voltar:hover {
+            background-color: #545e6c;
+        }
+
+        .prota-mode .voltar a {
+            color: #c8d1d9;
+        }
+
+        .prota-mode h2,
+        .prota-mode label {
+            color: #44545d;
+        }
+
+        .prota-mode .message,
+        .prota-mode button,
+        .prota-mode button:hover {
+            background-color: #44545d;
+        }
+
+        .prota-mode .message,
+        .prota-mode button {
+            color: #c8d1d9;
+        }
+
+        .prota-mode .mono2,
+        .deute2,
+        .trita2,
+        .prota-mode .container .vinor2 {
+            display: none;
+        }
+
+        .prota-mode #acessibilidade .vinor2 {
+            display: none;
+        }
+
+        .prota-mode .prota2 {
+            display: flex;
+        }
+
+        .prota-mode,
+        .prota-mode .opt,
+        .prota-mode .container {
+            background-color: #c8d1d9;
+        }
+
+        .prota-mode .opcoes {
+            box-shadow: 0 2px 5px #44545d;
+            background-color: #545e6c;
+        }
+
+        .prota-mode .opt {
+            color: #44545d;
+        }
+
+        /* Modo Deuteranopia */
+
+        .deute-mode .container {
+            border: 2px solid #44565d;
+            background-color: #c7d1d8;
+        }
+
+        .deute-mode .voltar {
+            background-color: #44565d;
+        }
+
+        .deute-mode .voltar:hover {
+            background-color: #4b5d70;
+        }
+
+        .deute-mode .voltar a {
+            color: #c7d1d8;
+        }
+
+        .deute-mode h2,
+        .deute-mode label {
+            color: #44565d;
+        }
+
+        .deute-mode .message,
+        .deute-mode button,
+        .deute-mode button:hover {
+            background-color: #44565d;
+        }
+
+        .deute-mode .message,
+        .deute-mode button {
+            color: #c7d1d8;
+        }
+
+        .deute-mode .mono2,
+        .trita2,
+        .proto2,
+        .deute-mode .container .vinor2 {
+            display: none;
+        }
+
+        .deute-mode #acessibilidade .vinor2 {
+            display: none;
+        }
+
+        .deute-mode .deute2 {
+            display: inherit;
+        }
+
+        .deute-mode,
+        .deute-mode .opt,
+        .deute-mode .container {
+            background-color: #c7d1d8;
+        }
+
+        .deute-mode .opcoes {
+            box-shadow: 0 2px 5px #44565d;
+            background-color: #4b5d70;
+        }
+
+        .deute-mode .opt {
+            color: #44565d;
+        }
+
+        /* Modo Tritanopia */
+
+        .trita-mode .container {
+            border: 2px solid #345b55;
+            background-color: #cad6ce;
+        }
+
+        .trita-mode .voltar {
+            background-color: #345b55;
+        }
+
+        .trita-mode .voltar:hover {
+            background-color: #006e61;
+        }
+
+        .trita-mode .voltar a {
+            color: #cad6ce;
+        }
+
+        .trita-mode h2,
+        .trita-mode label {
+            color: #345b55;
+        }
+
+        .trita-mode .message,
+        .trita-mode button,
+        .trita-mode button:hover {
+            background-color: #345b55;
+        }
+
+        .trita-mode .message,
+        .trita-mode button {
+            color: #cad6ce;
+        }
+
+        .trita-mode .mono2,
+        .deute2,
+        .proto2,
+        .trita-mode .container .vinor2 {
+            display: none;
+        }
+
+        .trita-mode #acessibilidade .vinor2 {
+            display: none;
+        }
+
+        .trita-mode .trita2 {
+            display: inherit;
+        }
+
+        .trita-mode,
+        .trita-mode .opt,
+        .trita-mode .container {
+            background-color: #cad6ce;
+        }
+
+        .trita-mode .opcoes {
+            box-shadow: 0 2px 5px #345b55;
+            background-color: #006e61;
+        }
+
+        .trita-mode .opt {
+            color: #345b55;
+        }
+
+        /* Modo Monocromacia */
+
+        .mono-mode .container {
+            border: 2px solid #464646;
+            background-color: #D0D0D0;
+        }
+
+        .mono-mode .voltar {
+            background-color: #464646;
+        }
+
+        .mono-mode .voltar:hover {
+            background-color: #5E5E5E;
+        }
+
+        .mono-mode .voltar a {
+            color: #D0D0D0;
+        }
+
+        .mono-mode h2,
+        .mono-mode label {
+            color: #464646;
+        }
+
+        .mono-mode .message,
+        .mono-mode button,
+        .mono-mode button:hover {
+            background-color: #464646;
+        }
+
+        .mono-mode .message,
+        .mono-mode button {
+            color: #D0D0D0;
+        }
+
+        .mono-mode .prota2,
+        .deute2,
+        .trita2,
+        .mono-mode .container .vinor2 {
+            display: none;
+        }
+
+        .mono-mode #acessibilidade .vinor2 {
+            display: none;
+        }
+
+        .mono-mode .mono2 {
+            display: inherit;
+        }
+
+        .mono-mode,
+        .mono-mode .opt,
+        .mono-mode .container {
+            background-color: #D0D0D0;
+        }
+
+        .mono-mode .opcoes {
+            box-shadow: 0 2px 5px #464646;
+            background-color: #5E5E5E;
+        }
+
+        .mono-mode .opt {
+            color: #464646;
+        }
+    </style>
+</head>
+
+<body class="vinor-mode">
+    <form id="myForm">
+        <center>
+            <h2 style=color:#1a535c>Menu Inclusivo - Login</h2>
+            <div class="container">
+                <center>
+                    <img src="img/Protanopia/usuarioprota.png" height="60" width="60" class="prota2" alt="Usuário">
+                    <img src="img/Deuteranopia/usuariodeute.png" height="60" width="60" class="deute2" alt="Usuário">
+                    <img src="img/Tritanopia/usuariotrita.png" height="60" width="60" class="trita2" alt="Usuário">
+                    <img src="img/monocromacia/usuariomono.png" height="60" width="60" class="mono2" alt="Usuário">
+                    <img src="img/usuario.png" height="60" width="60" class="vinor2" alt="Usuário">
+                </center>
+                <br>
+                <div class="input-group">
+                    <img src="img/email.png" height="30" width="30" alt="Email" class="vinor2">
+                    <img src="img/Protanopia/emailprota.png" height="30" width="30" alt="Email" class="prota2">
+                    <img src="img/Deuteranopia/emaildeute.png" height="30" width="30" alt="Email" class="deute2">
+                    <img src="img/Tritanopia/emailtrita.png" height="30" width="30" alt="Email" class="trita2">
+                    <img src="img/monocromacia/emailmono.png" height="30" width="30" alt="Email" class="mono2">
+                    <input type='email' placeholder='Digite seu email' required>
+                </div>
+                <div class="input-group">
+                    <img src="img/trancar.png" height="30" width="30" alt="Senha" class="vinor2">
+                    <img src="img/Protanopia/trancarprota.png" height="30" width="30" alt="Senha" class="prota2">
+                    <img src="img/Deuteranopia/trancardeute.png" height="30" width="30" alt="Senha" class="deute2">
+                    <img src="img/Tritanopia/trancartrita.png" height="30" width="30" alt="Senha" class="trita2">
+                    <img src="img/monocromacia/trancarmono.png" height="30" width="30" alt="Senha" class="mono2">
+                    <input type='password' maxlength="20" placeholder='Digite sua senha' required>
+                </div>
+                <button type="submit">Realizar login</button>
+                <center>
+                    <div class="message" id="confirmationMessage">Seu cadastro foi concluído! Você será redirencionado.
+                </center>
+            </div>
+            </div>
+    </form>
+    <div id="acessibilidade" onclick="toggleOpcoes()">
+        <img src="img/acessibilidade.png" height="55" width="55" class="vinor2">
+        <img src="img/Protanopia/acessibilidadeprota.png" height="55" width="55" class="prota2">
+        <img src="img/Deuteranopia/acessibilidadedeute.png" height="55" width="55" class="deute2">
+        <img src="img/Tritanopia/acessibilidadetrita.png" height="55" width="55" class="trita2">
+        <img src="img/monocromacia/acessibilidademono.png" height="55" width="55" class="mono2">
+    </div>
+
+    <div class="opcoes">
+        <div class="config">
+            <div id="prota" class="opt" onclick="toggleProta()">
+                Protanopia
+            </div>
+
+            <div id="deute" class="opt" onclick="toggleDeute()">
+                Deuteranopia
+            </div>
+
+            <div id="trita" class="opt" onclick="toggleTrita()">
+                Tritanopia
+            </div>
+
+            <div id="mono" class="opt" onclick="toggleMono()">
+                Monocromacia
+            </div>
+
+            <div id="vinor" class="opt" onclick="toggleVinor()">
+                Visão Normal
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Evita o envio do formulário
+            document.getElementById("confirmationMessage").style.display = "block"; // Mostra a mensagem
+
+            // Redireciona após 5 segundos
+            setTimeout(function () {
+                window.location.href = 'menuinclusivo.html';
+            }, 5000);
+        });
+        function toggleOpcoes() {
+            const optDiv = document.querySelector('.opcoes');
+            if (optDiv.style.display === 'none' || optDiv.style.display === '') {
+                optDiv.style.display = 'block';
+            } else {
+                optDiv.style.display = 'none';
+            }
+        }
+
+        // Função para remover todas as classes de acessibilidade
+        function clearModes() {
+            document.body.classList.remove("prota-mode", "deute-mode", "trita-mode", "mono-mode");
+        }
+
+        function toggleProta() {
+            clearModes(); // Limpa as classes existentes
+            document.body.classList.add("prota-mode"); // Adiciona a classe Protanopia
+        }
+
+        function toggleDeute() {
+            clearModes(); // Limpa as classes existentes
+            document.body.classList.add("deute-mode"); // Adiciona a classe Deuteranopia
+        }
+
+        function toggleTrita() {
+            clearModes(); // Limpa as classes existentes
+            document.body.classList.add("trita-mode"); // Adiciona a classe Tritanopia
+        }
+
+        function toggleMono() {
+            clearModes(); // Limpa as classes existentes
+            document.body.classList.add("mono-mode"); // Adiciona a classe Monocromacia
+        }
+
+        function toggleVinor() {
+            clearModes(); // Remove todas as classes para voltar à visão normal
+            document.body.classList.add("vinor-mode");
+        }
+
+    </script>
+    </center>
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+
+</html>
