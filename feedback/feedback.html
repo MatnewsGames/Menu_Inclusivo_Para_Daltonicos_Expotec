@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deixe aqui o seu feedback</title>
+    <style>
+        body {
+            font-family: Rockwell;
+            margin: 0;
+            padding: 0;
+            background-color: #c7d0d8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            /* Define a altura da página como 100% da altura da viewport */
+        }
+
+        input,
+        textarea {
+            display: flex;
+            max-width: 100%;
+            width: 100%;
+            /* Ajustado para ocupar o espaço do formulário */
+            height: 20px;
+            padding: 10px;
+            margin: 3px;
+            margin-right: 350px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #1a535c;
+            color: #c7d0d8;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+
+        button:hover {
+            background-color: #1a535c;
+        }
+
+        .message {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #1a535c;
+            color: #c7d0d8;
+            border-radius: 4px;
+            width: 100%;
+            text-align: center;
+        }
+
+        label {
+            text-align: left;
+            display: block;
+            color: #1a535c;
+            margin-left: 5px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1a535c;
+        }
+
+        #acessibilidade {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            width: 55px;
+            height: 55px;
+        }
+
+        .opcoes {
+            display: none;
+            width: 55%;
+            border-radius: 10px;
+            padding: 5px;
+            box-shadow: 0 2px 5px #1a535c;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #006d77;
+            margin: 10px;
+        }
+
+        .config {
+            display: flex;
+            position: relative;
+            justify-content: space-evenly;
+        }
+
+        .opt {
+            color: #1a535c;
+            display: inline-flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            padding: 5px;
+            width: 80px;
+            height: 50px;
+            border: 0px;
+            border-radius: 10px;
+            background-color: #c7d0d8;
+            cursor: pointer;
+        }
+
+        .voltar {
+            display: flex;
+            position: absolute;
+            top: 10px;
+            width: 40px;
+            height: 40px;
+            border: 0;
+            border-radius: 999px;
+            left: 10px;
+            background-color: #1a535c;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .voltar a {
+            text-decoration: none;
+            font-size: 30px;
+            color: #c7d0d8;
+        }
+
+        .voltar:hover {
+            background-color: #006d77;
+        }
+
+        #acessibilidade #vinor2 {
+            display: flex;
+        }
+
+        #prota2,
+        #deute2,
+        #trita2,
+        #mono2 {
+            display: none;
+        }
+
+        /* Modo Visão Normal */
+
+        .vinor-mode #prota2,
+        #deute2,
+        #trita2,
+        #mono2 {
+            display: none;
+        }
+
+        .vinor-mode #vinor2 {
+            display: flex;
+        }
+
+        /* Modo Protanopia */
+
+        .prota-mode .voltar {
+            background-color: #44545d;
+        }
+
+        .prota-mode .voltar:hover {
+            background-color: #545e6c;
+        }
+
+        .prota-mode .voltar a {
+            color: #c8d1d9;
+        }
+
+        .prota-mode h2,
+        .prota-mode label {
+            color: #44545d;
+        }
+
+        .prota-mode .message,
+        .prota-mode button,
+        .prota-mode button:hover {
+            background-color: #44545d;
+        }
+
+        .prota-mode .message,
+        .prota-mode button {
+            color: #c8d1d9;
+        }
+
+        .prota-mode #mono2,
+        #deute2,
+        #trita2 {
+            display: none;
+        }
+
+        .prota-mode #acessibilidade #vinor2 {
+            display: none;
+        }
+
+        .prota-mode #prota2 {
+            display: flex;
+        }
+
+        .prota-mode,
+        .prota-mode .opt {
+            background-color: #c8d1d9;
+        }
+
+        .prota-mode .opcoes {
+            box-shadow: 0 2px 5px #44545d;
+            background-color: #545e6c;
+        }
+
+        .prota-mode .opt {
+            color: #44545d;
+        }
+
+        /* Modo Deuteranopia */
+
+        .deute-mode .voltar {
+            background-color: #44565d;
+        }
+
+        .deute-mode .voltar:hover {
+            background-color: #4b5d70;
+        }
+
+        .deute-mode .voltar a {
+            color: #c7d1d8;
+        }
+
+        .deute-mode h2,
+        .deute-mode label {
+            color: #44565d;
+        }
+
+        .deute-mode .message,
+        .deute-mode button,
+        .deute-mode button:hover {
+            background-color: #44565d;
+        }
+
+        .deute-mode .message,
+        .deute-mode button {
+            color: #c7d1d8;
+        }
+
+        .deute-mode #mono2,
+        #trita2,
+        #proto2 {
+            display: none;
+        }
+
+        .deute-mode #acessibilidade #vinor2 {
+            display: none;
+        }
+
+        .deute-mode #deute2 {
+            display: inherit;
+        }
+
+        .deute-mode,
+        .deute-mode .opt {
+            background-color: #c7d1d8;
+        }
+
+        .deute-mode .opcoes {
+            box-shadow: 0 2px 5px #44565d;
+            background-color: #4b5d70;
+        }
+
+        .deute-mode .opt {
+            color: #44565d;
+        }
+
+        /* Modo Tritanopia */
+
+        .trita-mode .voltar {
+            background-color: #345b55;
+        }
+
+        .trita-mode .voltar:hover {
+            background-color: #006e61;
+        }
+
+        .trita-mode .voltar a {
+            color: #cad6ce;
+        }
+
+        .trita-mode h2,
+        .trita-mode label {
+            color: #345b55;
+        }
+
+        .trita-mode .message,
+        .trita-mode button,
+        .trita-mode button:hover {
+            background-color: #345b55;
+        }
+
+        .trita-mode .message,
+        .trita-mode button {
+            color: #cad6ce;
+        }
+
+        .trita-mode #mono2,
+        #deute2,
+        #proto2 {
+            display: none;
+        }
+
+        .trita-mode #acessibilidade #vinor2 {
+            display: none;
+        }
+
+        .trita-mode #trita2 {
+            display: inherit;
+        }
+
+        .trita-mode,
+        .trita-mode .opt {
+            background-color: #cad6ce;
+        }
+
+        .trita-mode .opcoes {
+            box-shadow: 0 2px 5px #345b55;
+            background-color: #006e61;
+        }
+
+        .trita-mode .opt {
+            color: #345b55;
+        }
+
+        /* Modo Monocromacia */
+
+        .mono-mode .voltar {
+            background-color: #464646;
+        }
+
+        .mono-mode .voltar:hover {
+            background-color: #5E5E5E;
+        }
+
+        .mono-mode .voltar a {
+            color: #D0D0D0;
+        }
+
+        .mono-mode h2,
+        .mono-mode label {
+            color: #464646;
+        }
+
+        .mono-mode .message,
+        .mono-mode button,
+        .mono-mode button:hover {
+            background-color: #464646;
+        }
+
+        .mono-mode .message,
+        .mono-mode button {
+            color: #D0D0D0;
+        }
+
+        .mono-mode #prota2,
+        #deute2,
+        #trita2 {
+            display: none;
+        }
+
+        .mono-mode #acessibilidade #vinor2 {
+            display: none;
+        }
+
+        .mono-mode #mono2 {
+            display: inherit;
+        }
+
+        .mono-mode,
+        .mono-mode .opt {
+            background-color: #D0D0D0;
+        }
+
+        .mono-mode .opcoes {
+            box-shadow: 0 2px 5px #464646;
+            background-color: #5E5E5E;
+        }
+
+        .mono-mode .opt {
+            color: #464646;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="voltar">
+        <a href="../menuinclusivo.html">←</a>
+    </div>
+
+    <form id="myForm" action="inserir.php" method="POST">
+
+        <h2>Preencha este breve formulário de feedback para que possamos garantir <br> uma experiência de alta qualidade
+            para todos os nossos visitantes!</h2>
+
+        <label for="name">Email:</label>
+        <input type="email" id="name" name="name" required><br>
+
+        <label for="question1">Qual parte você achou mais interessante?</label>
+        <textarea id="question1" name="question1" required></textarea><br>
+
+        <label for="question2">Qual parte você achou menos interessante?</label>
+        <textarea id="question2" name="question2" required></textarea><br>
+
+        <label for="question3">Digite a sua opinião geral:</label>
+        <textarea id="question3" name="question3" required></textarea><br>
+
+        <button type="submit">Enviar Feedback</button>
+        <div class="message" id="confirmationMessage">
+            Sua resposta foi enviada!
+        </div>
+        <br>
+        <center>
+
+            <div id="acessibilidade" onclick="toggleOpcoes()">
+                <img src="../img/Protanopia/acessibilidadeprota.png" height="55" width="55" id="prota2">
+                <img src="../img/Deuteranopia/acessibilidadedeute.png" height="55" width="55" id="deute2">
+                <img src="../img/Tritanopia/acessibilidadetrita.png" height="55" width="55" id="trita2">
+                <img src="../img/monocromacia/acessibilidademono.png" height="55" width="55" id="mono2">
+                <img src="../img/acessibilidade.png" height="55" width="55" id="vinor2">
+            </div>
+
+            <div class="opcoes">
+                <div class="config">
+                    <div id="prota" class="opt" onclick="toggleProta()">
+                        Protanopia
+                    </div>
+
+                    <div id="deute" class="opt" onclick="toggleDeute()">
+                        Deuteranopia
+                    </div>
+
+                    <div id="trita" class="opt" onclick="toggleTrita()">
+                        Tritanopia
+                    </div>
+
+                    <div id="mono" class="opt" onclick="toggleMono()">
+                        Monocromacia
+                    </div>
+
+                    <div id="vinor" class="opt" onclick="toggleVinor()">
+                        Visão Normal
+                    </div>
+                </div>
+            </div>
+        </center>
+		<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+    </form>
+
+    <script>
+        // Verifica se há um parâmetro na URL indicando sucesso de envio
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('enviado')) {
+            document.getElementById('confirmationMessage').style.display = 'block';
+        }
+
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+
+            document.getElementById("confirmationMessage").style.display = "block"; // Mostra a mensagem
+        });
+
+        function toggleOpcoes() {
+            const optDiv = document.querySelector('.opcoes');
+            if (optDiv.style.display === 'none' || optDiv.style.display === '') {
+                optDiv.style.display = 'block';
+            } else {
+                optDiv.style.display = 'none';
+            }
+        }
+
+        // Função para remover todas as classes de acessibilidade
+        function clearModes() {
+            document.body.classList.remove("prota-mode", "deute-mode", "trita-mode", "mono-mode");
+        }
+
+        function toggleProta() {
+            clearModes(); // Limpa as classes existentes
+            document.body.classList.add("prota-mode"); // Adiciona a classe Protanopia
+        }
+
+        function toggleDeute() {
+            clearModes(); // Limpa as classes existentes
+            document.body.classList.add("deute-mode"); // Adiciona a classe Deuteranopia
+        }
+
+        function toggleTrita() {
+            clearModes(); // Limpa as classes existentes
+            document.body.classList.add("trita-mode"); // Adiciona a classe Tritanopia
+        }
+
+        function toggleMono() {
+            clearModes(); // Limpa as classes existentes
+            document.body.classList.add("mono-mode"); // Adiciona a classe Monocromacia
+        }
+
+        function toggleVinor() {
+            clearModes(); // Remove todas as classes para voltar à visão normal
+            document.body.classList.add("vinor-mode");
+        }
+    </script>
+</body>
+
+</html>
