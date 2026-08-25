@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créditos</title>
+    <link rel="icon" href="img/icon.ico" type="image/png">
+</head>
+
+<body>
+    <div class="voltar">
+        <a href="menuinclusivo.html">←</a>
+    </div>
+    <div class="cards">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="img/isa.jpg" alt="Isabelle" class="foto">
+                    <div class="nome">
+                        <h1>Isabelle</h1>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <div class="faixa">
+                        <center>
+                            <p>16 anos</p>
+                            <p>Ouvir música e desenhar</p>
+                            <p>"A música toca almas e, em momentos críticos, salva vidas silenciosamente"</p>
+                            <img src="img/dinossauro.png" alt="Dinossauro" width="50px" height="50px">
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="img/raphael.jpg" alt="Raphael" class="foto">
+                    <div class="nome">
+                        <h1>Raphael</h1>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <div class="faixa">
+                        <center>
+                            <p>16 anos</p>
+                            <p>Tocar música, desenhar e fotografia</p>
+                            <p>"A perseverança é a chave, o esforço vence o talento"</p>
+                            <img src="img/leao.png" alt="Leão" width="50px" height="50px">
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="img/matheus.jpg" alt="Matheus" class="foto">
+                    <div class="nome">
+                        <h1>Matheus</h1>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <div class="faixa">
+                        <center>
+                            <p>16 anos</p>
+                            <p>Programação e jogar vídeo game</p>
+                            <p>"Um amador determinado supera um profissional desmotivado quando lhe convém"</p>
+                            <img src="img/capivara.png" alt="Capivara" width="50px" height="50px">
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="acessibilidade" onclick="toggleOpcoes()">
+        <img src="img/Protanopia/acessibilidadeprota.png" height="55" width="55" id="prota2">
+        <img src="img/Deuteranopia/acessibilidadedeute.png" height="55" width="55" id="deute2">
+        <img src="img/Tritanopia/acessibilidadetrita.png" height="55" width="55" id="trita2">
+        <img src="img/monocromacia/acessibilidademono.png" height="55" width="55" id="mono2">
+        <img src="img/acessibilidade.png" height="55" width="55" id="vinor2">
+    </div>
+
+    <div class="opcoes">
+        <div class="config">
+            <div id="prota" class="opt" onclick="toggleProta()">
+                Protanopia
+            </div>
+
+            <div id="deute" class="opt" onclick="toggleDeute()">
+                Deuteranopia
+            </div>
+
+            <div id="trita" class="opt" onclick="toggleTrita()">
+                Tritanopia
+            </div>
+
+            <div id="mono" class="opt" onclick="toggleMono()">
+                Monocromacia
+            </div>
+
+            <div id="vinor" class="opt" onclick="toggleVinor()">
+                Visão Normal
+            </div>
+        </div>
+    </div>
+	<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+
+<style>
+    body {
+        margin: 0 auto;
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        background-color: #c7d0d8;
+        flex-direction: column;
+    }
+
+    .cards {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .voltar {
+        display: flex;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        border-radius: 999px;
+        left: 10px;
+        top: 10px;
+        background-color: #1a535c;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .voltar a {
+        text-decoration: none;
+        font-size: 30px;
+        color: #c7d0d8;
+    }
+
+    .voltar:hover {
+        background-color: #006d77;
+    }
+
+    .flip-card {
+        display: flex;
+        background-color: transparent;
+        width: 300px;
+        height: 400px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        margin: 40px;
+        border-radius: 20px;
+    }
+
+    .foto {
+        width: 300px;
+        height: 350px;
+        display: flex;
+        object-fit: cover;
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .nome {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: #006d77;
+        border-radius: 0px 0px 20px 20px;
+        background-image: url("img/textura.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+        background-color: #1a535c;
+        color: black;
+        border-radius: 20px;
+    }
+
+    .flip-card-back {
+        display: flex;
+        flex-direction: column;
+        background-color: #006d77;
+        color: white;
+        transform: rotateY(180deg);
+        justify-content: center;
+        text-align: center;
+        border-radius: 20px;
+        background-image: url("img/textura.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .faixa {
+        max-width: 100%;
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        background-color: #1a535c;
+        justify-content: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    #acessibilidade {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        width: 55px;
+        height: 55px;
+    }
+
+    .opcoes {
+        display: none;
+        width: 55%;
+        border-radius: 10px;
+        padding: 5px;
+        box-shadow: 0 2px 5px #1a535c;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #006d77;
+        margin: 10px;
+    }
+
+    .config {
+        display: flex;
+        position: relative;
+        justify-content: space-evenly;
+    }
+
+    .opt {
+        color: #1a535c;
+        display: inline-flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        padding: 5px;
+        width: 80px;
+        height: 50px;
+        border: 0px;
+        border-radius: 10px;
+        background-color: #c7d0d8;
+        cursor: pointer;
+    }
+
+    #acessibilidade #vinor2 {
+        display: flex;
+    }
+
+    #deute2,
+    #trita2,
+    #mono2,
+    #prota2 {
+        display: none;
+    }
+
+    /* Modo Protanopia */
+
+    .prota-mode .flip-card-front,
+    .prota-mode .faixa,
+    .prota-mode .nome,
+    .prota-mode .flip-card-back {
+        background-color: #44545d;
+    }
+
+    .prota-mode .voltar {
+        background-color: #44545d;
+    }
+
+    .prota-mode .voltar:hover {
+        background-color: #545e6c;
+    }
+
+    .prota-mode .voltar a {
+        color: #c8d1d9;
+    }
+
+    .prota-mode #mono2,
+    #deute2,
+    #trita2 {
+        display: none;
+    }
+
+    .prota-mode #acessibilidade #vinor2 {
+        display: none;
+    }
+
+    .prota-mode #prota2 {
+        display: inherit;
+    }
+
+    .prota-mode,
+    .prota-mode .opt {
+        background-color: #c8d1d9;
+    }
+
+    .prota-mode .opcoes {
+        box-shadow: 0 2px 5px #44545d;
+        background-color: #545e6c;
+    }
+
+    .prota-mode .opt {
+        color: #44545d;
+    }
+
+    /* Modo Deuteranopia */
+
+    .deute-mode .flip-card-front,
+    .deute-mode .faixa,
+    .deute-mode .nome,
+    .deute-mode .flip-card-back {
+        background-color: #44565d;
+    }
+
+    .deute-mode .voltar {
+        background-color: #44565d;
+    }
+
+    .deute-mode .voltar:hover {
+        background-color: #4b5d70;
+    }
+
+    .deute-mode .voltar a {
+        color: #c7d1d8;
+    }
+
+    .deute-mode #mono2,
+    #trita2,
+    #prota2 {
+        display: none;
+    }
+
+    .deute-mode #acessibilidade #vinor2 {
+        display: none;
+    }
+
+    .deute-mode #deute2 {
+        display: inherit;
+    }
+
+    .deute-mode,
+    .deute-mode .opt {
+        background-color: #c7d1d8;
+    }
+
+    .deute-mode .opcoes {
+        box-shadow: 0 2px 5px #44565d;
+        background-color: #4b5d70;
+    }
+
+    .deute-mode .opt {
+        color: #44565d;
+    }
+
+    /* Modo Tritanopia */
+
+    .trita-mode .flip-card-front,
+    .trita-mode .faixa,
+    .trita-mode .nome,
+    .trita-mode .flip-card-back {
+        background-color: #345b55;
+    }
+
+    .trita-mode .voltar {
+        background-color: #345b55;
+    }
+
+    .trita-mode .voltar:hover {
+        background-color: #006e61;
+    }
+
+    .trita-mode .voltar a {
+        color: #cad6ce;
+    }
+
+    .trita-mode #mono2,
+    #deute2,
+    #prota2 {
+        display: none;
+    }
+
+    .trita-mode #acessibilidade #vinor2 {
+        display: none;
+    }
+
+    .trita-mode #trita2 {
+        display: inherit;
+    }
+
+    .trita-mode,
+    .trita-mode .opt {
+        background-color: #cad6ce;
+    }
+
+    .trita-mode .opcoes {
+        box-shadow: 0 2px 5px #345b55;
+        background-color: #006e61;
+    }
+
+    .trita-mode .opt {
+        color: #345b55;
+    }
+
+    /* Modo Monocromacia */
+
+    .mono-mode .flip-card-front,
+    .mono-mode .faixa,
+    .mono-mode .nome,
+    .mono-mode .flip-card-back {
+        background-color: #464646;
+    }
+
+    .mono-mode .voltar {
+        background-color: #464646;
+    }
+
+    .mono-mode .voltar:hover {
+        background-color: #5E5E5E;
+    }
+
+    .mono-mode .voltar a {
+        color: #D0D0D0;
+    }
+
+    .mono-mode #prota2,
+    #deute2,
+    #trita2 {
+        display: none;
+    }
+
+    .mono-mode #acessibilidade #vinor2 {
+        display: none;
+    }
+
+    .mono-mode #mono2 {
+        display: inherit;
+    }
+
+    .mono-mode,
+    .mono-mode .opt {
+        background-color: #D0D0D0;
+    }
+
+    .mono-mode .opcoes {
+        box-shadow: 0 2px 5px #464646;
+        background-color: #5E5E5E;
+    }
+
+    .mono-mode .opt {
+        color: #464646;
+    }
+
+    /* Modo Visão Normal */
+
+    .vinor-mode #vinor2 {
+        display: flex;
+    }
+</style>
+
+<script>
+
+    function toggleOpcoes() {
+        const optDiv = document.querySelector('.opcoes');
+        if (optDiv.style.display === 'none' || optDiv.style.display === '') {
+            optDiv.style.display = 'block';
+        } else {
+            optDiv.style.display = 'none';
+        }
+    }
+
+    // Função para remover todas as classes de acessibilidade
+    function clearModes() {
+        document.body.classList.remove("prota-mode", "deute-mode", "trita-mode", "mono-mode");
+    }
+
+    function toggleProta() {
+        clearModes(); // Limpa as classes existentes
+        document.body.classList.add("prota-mode"); // Adiciona a classe Protanopia
+    }
+
+    function toggleDeute() {
+        clearModes(); // Limpa as classes existentes
+        document.body.classList.add("deute-mode"); // Adiciona a classe Deuteranopia
+    }
+
+    function toggleTrita() {
+        clearModes(); // Limpa as classes existentes
+        document.body.classList.add("trita-mode"); // Adiciona a classe Tritanopia
+    }
+
+    function toggleMono() {
+        clearModes(); // Limpa as classes existentes
+        document.body.classList.add("mono-mode"); // Adiciona a classe Monocromacia
+    }
+
+    function toggleVinor() {
+        clearModes(); // Remove todas as classes para voltar à visão normal
+        document.body.classList.add("vinor-mode");
+    }
+
+</script>
+
+</html>
