@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Inclusivo</title>
+    <link rel="icon" href="img/icon.ico" type="image/png">
+</head>
+
+<body>
+    <center>
+        <table>
+            <tr>
+                <td>
+                    <form id="search-form" action="search_results.html" method="get">
+                        <div class="search-container">
+                            <img src="img/Protanopia/estrelaprota.png" height="45" width="45" class="star-left"
+                                id="sdprota2">
+                            <img src="img/Deuteranopia/estreladeute.png" height="45" width="45" class="star-left"
+                                id="sddeute2">
+                            <img src="img/Tritanopia/estrelatrita.png" height="45" width="45" class="star-left"
+                                id="sdtrita2">
+                            <img src="img/monocromacia/estrelamono.png" height="45" width="45" class="star-left"
+                                id="sdmono2">
+                            <img src="img/estrela.png" height="45" width="45" class="star-left" id="sdvinor2">
+                            <input type="text" width="100" id="search-bar" name="query"
+                                placeholder="Digite sua pesquisa...">
+                            <button type="submit" id="search-button">
+                                <img src="img/Protanopia/lupaprota.png" height="20" width="20" class="prota2">
+                                <img src="img/Deuteranopia/lupadeute.png" height="20" width="20" class="deute2">
+                                <img src="img/Tritanopia/lupatrita.png" height="20" width="20" class="trita2">
+                                <img src="img/monocromacia/lupamono.png" height="20" width="20" class="mono2">
+                                <img src="img/lupa.png" height="20" width="20" class="vinor2">
+                            </button>
+                            <img src="img/Protanopia/estrelaprota.png" height="45" width="45" class="star-right"
+                                id="stprota2">
+                            <img src="img/Deuteranopia/estreladeute.png" height="45" width="45" class="star-right"
+                                id="stdeute2">
+                            <img src="img/Tritanopia/estrelatrita.png" height="45" width="45" class="star-right"
+                                id="sttrita2">
+                            <img src="img/monocromacia/estrelamono.png" height="45" width="45" class="star-right"
+                                id="stmono2">
+                            <img src="img/estrela.png" height="45" width="45" class="star-right" id="stvinor2">
+                        </div>
+                        <div id="results-container"></div>
+                        <h1>
+                            Menu Inclusivo
+                            <img src="img/Protanopia/hamburguerprota.png" height="60" width="60" class="prota2">
+                            <img src="img/Deuteranopia/hamburguerdeute.png" height="60" width="60" class="deute2">
+                            <img src="img/Tritanopia/hamburguertrita.png" height="60" width="60" class="trita2">
+                            <img src="img/monocromacia/hamburguermono.png" height="60" width="60" class="mono2">
+                            <img src="img/hamburguer.png" height="60" width="60" class="vinor2">
+                        </h1>
+
+                        <div class=h3>
+                            <h3>
+                                <div class="img">
+                                    <img src="img/Protanopia/coxinhaprota.png" height="45" width="45" class="prota2">
+                                    <img src="img/Deuteranopia/coxinhadeute.png" height="45" width="45" class="deute2">
+                                    <img src="img/Tritanopia/coxinhatrita.png" height="45" width="45" class="trita2">
+                                    <img src="img/monocromacia/coxinhamono.png" height="45" width="45" class="mono2">
+                                    <img src="img/coxinha.png" height="45" width="45" class="vinor2">
+                                </div>
+                                <div class="container">
+                                    <div class="titulo">
+                                        Salgados
+                                    </div>
+                                </div>
+                                <div class="store-items">
+                                    <div class="eitems">
+                                        <div class="item">
+                                            <p>Torta - R$12,00</p>
+                                            <button onclick="addToCart('Torta', 12)" class="addbtn">+</button>
+                                            <button onclick="removeToCart('Torta', 12)" class="removebtn">-</button>
+                                        </div>
+                                        <div class="item">
+                                            <p>Coxinha - R$08,00</p>
+                                            <button onclick="addToCart('Coxinha', 8)" class="addbtn">+</button>
+                                            <button onclick="removeToCart('Coxinha', 8)" class="removebtn">-</button>
+                                        </div>
+                                        <div class="item">
+                                            <p>X-bacon - R$22,00</p>
+                                            <button onclick="addToCart('X-bacon', 22)" class="addbtn">+</button>
+                                            <button onclick="removeToCart('X-bacon', 22)" class="removebtn">-</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="ditems">
+                                        <div class="item">
+                                            <button onclick="removeToCart('Pastel', 12)" class="removebtn">-</button>
+                                            <button onclick="addToCart('Pastel', 12)" class="addbtn">+</button>
+                                            <p>Pastel - R$12,00</p>
+                                        </div>
+                                        <div class="item">
+                                            <button onclick="removeToCart('Esfiha', 8)" class="removebtn">-</button>
+                                            <button onclick="addToCart('Esfiha', 8)" class="addbtn">+</button>
+                                            <p>Esfiha - R$08,00</p>
+                                        </div>
+                                        <div class="item">
+                                            <button onclick="removeToCart('X-burguer', 22)" class="removebtn">-</button>
+                                            <button onclick="addToCart('X-burguer', 22)" class="addbtn">+</button>
+                                            <p>X-burguer - R$22,00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h3>
+
+                            <h4>
+                                <div class="store-items">
+                                    <div class="eitems">
+                                        Acompanhamentos
+                                        <div class="item">
+                                            <p>Batata frita - R$10,00</p>
+                                            <button onclick="addToCart('Batata frita', 10)" class="addbtn">+</button>
+                                            <button onclick="removeToCart('Batata frita', 10)"
+                                                class="removebtn">-</button>
+                                        </div>
+                                        <div class="item">
+                                            <p>Trio de molhos - R$09,00</p>
+                                            <button onclick="addToCart('Trio de molhos', 9)" class="addbtn">+</button>
+                                            <button onclick="removeToCart('Trio de molhos', 9)"
+                                                class="removebtn">-</button>
+                                        </div>
+                                    </div>
+                                    <div id="imgbandeja">
+                                        <img src="img/Protanopia/bandejaprota.png" height="45" width="45"
+                                            class="prota2">
+                                        <img src="img/Deuteranopia/bandejadeute.png" height="45" width="45"
+                                            class="deute2">
+                                        <img src="img/Tritanopia/bandejatrita.png" height="45" width="45"
+                                            class="trita2">
+                                        <img src="img/monocromacia/bandejamono.png" height="45" width="45"
+                                            class="mono2">
+                                        <img src="img/bandeja.png" height="45" width="45" class="vinor2">
+                                    </div>
+                                    <div class="ditems">
+                                        Sobremesas
+                                        <div class="item">
+                                            <button onclick="removeToCart('Bolo', 8)" class="removebtn">-</button>
+                                            <button onclick="addToCart('Bolo', 8)" class="addbtn">+</button>
+                                            <p>Bolo - R$08,00</p>
+                                        </div>
+                                        <div class="item">
+                                            <button onclick="removeToCart('Sorvete', 12)" class="removebtn">-</button>
+                                            <button onclick="addToCart('Sorvete', 12)" class="addbtn">+</button>
+                                            <p>Sorvete - R$12,00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h4>
+
+                            <br>
+
+                            <h3>
+                                <div class="img">
+                                    <img src="img/Protanopia/refrigerantesprota.png" height="45" width="45"
+                                        class="prota2">
+                                    <img src="img/Deuteranopia/refrigerantesdeute.png" height="45" width="45"
+                                        class="deute2">
+                                    <img src="img/Tritanopia/refrigerantestrita.png" height="45" width="45"
+                                        class="trita2">
+                                    <img src="img/monocromacia/refrigerantesmono.png" height="45" width="45"
+                                        class="mono2">
+                                    <img src="img/refrigerantes.png" height="45" width="45" class="vinor2">
+                                </div>
+                                <div class="container">
+                                    <div class="titulo">
+                                        Bebidas
+                                    </div>
+                                </div>
+                                <div class="store-items">
+                                    <div class="eitems">
+                                        <div class="item">
+                                            <p>Água - R$04,00</p>
+                                            <button onclick="addToCart('Água', 4)" class="addbtn">+</button>
+                                            <button onclick="removeToCart('Água', 4)" class="removebtn">-</button>
+                                        </div>
+                                        <div class="item">
+                                            <p>Suco - R$07,00</p>
+                                            <button onclick="addToCart('Suco', 7)" class="addbtn">+</button>
+                                            <button onclick="removeToCart('Suco', 7)" class="removebtn">-</button>
+                                        </div>
+                                    </div>
+                                    <div class="ditems">
+                                        <div class="item">
+                                            <button onclick="removeToCart('Refrigerante', 7)"
+                                                class="removebtn">-</button>
+                                            <button onclick="addToCart('Refrigerante', 7)" class="addbtn">+</button>
+                                            <p>Refrigerante - R$07,00</p>
+                                        </div>
+                                        <div class="item">
+                                            <button onclick="removeToCart('Vitamina', 8)" class="removebtn">-</button>
+                                            <button onclick="addToCart('Vitamina', 8)" class="addbtn">+</button>
+                                            <p>Vitamina - R$08,00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </h3>
+
+                            <div class="rodape1">
+                                <div id="resquerda">
+                                    <p class="rpe">Deixe aqui</p>
+                                    <p class="rpe">o seu feedback</p>
+                                </div>
+                                <div id="rdireita">
+                                    <p class="rpd">Av. Presidente Wilson,</p>
+                                    <p class="rpd">1013, São Vicente</p>
+                                </div>
+                            </div>
+
+                            <div class="rodape2">
+                                <div id="cliente">
+                                    <a href='feedback/feedback.html'>
+                                        <img src="img/Protanopia/clienteprota.png" height="55" width="55"
+                                            class="prota2">
+                                        <img src="img/Deuteranopia/clientedeute.png" height="55" width="55"
+                                            class="deute2">
+                                        <img src="img/Tritanopia/clientetrita.png" height="55" width="55"
+                                            class="trita2">
+                                        <img src="img/monocromacia/clientemono.png" height="55" width="55"
+                                            class="mono2">
+                                        <img src="img/cliente.png" height="55" width="55" class="vinor2">
+                                    </a>
+                                </div>
+                                <div id="acessibilidade" onclick="toggleOpcoes()">
+                                    <img src="img/acessibilidade.png" height="55" width="55" class="vinor2">
+                                    <img src="img/Protanopia/acessibilidadeprota.png" height="55" width="55"
+                                        class="prota2">
+                                    <img src="img/Deuteranopia/acessibilidadedeute.png" height="55" width="55"
+                                        class="deute2">
+                                    <img src="img/Tritanopia/acessibilidadetrita.png" height="55" width="55"
+                                        class="trita2">
+                                    <img src="img/monocromacia/acessibilidademono.png" height="55" width="55"
+                                        class="mono2">
+                                </div>
+                                <div id="mapas">
+                                    <a href='https://maps.app.goo.gl/jhnB9GRwfMMB7vgS9'>
+                                        <img src="img/Protanopia/lojaprota.png" height="55" width="55" class="prota2">
+                                        <img src="img/Deuteranopia/lojadeute.png" height="55" width="55" class="deute2">
+                                        <img src="img/Tritanopia/lojatrita.png" height="55" width="55" class="trita2">
+                                        <img src="img/monocromacia/lojamono.png" height="55" width="55" class="mono2">
+                                        <img src="img/loja.png" height="55" width="55" class="vinor2">
+                                    </a>
+                                </div>
+                            </div>
+                            <center>
+                                <div class="opcoes">
+                                    <div class="config">
+                                        <div id="prota" class="opt" onclick="toggleProta()">
+                                            Protanopia
+                                        </div>
+
+                                        <div id="deute" class="opt" onclick="toggleDeute()">
+                                            Deuteranopia
+                                        </div>
+
+                                        <div id="trita" class="opt" onclick="toggleTrita()">
+                                            Tritanopia
+                                        </div>
+
+                                        <div id="mono" class="opt" onclick="toggleMono()">
+                                            Monocromacia
+                                        </div>
+
+                                        <div id="vinor" class="opt" onclick="toggleVinor()">
+                                            Visão Normal
+                                        </div>
+                                    </div>
+                                </div>
+                            </center>
+                            <div id="sobrecreditos">
+                                <div id="dsobre">
+                                    <a href='sobre/sobre.html' class="sobre">
+                                        Sobre
+                                    </a>
+                                </div>
+                                <h4>|</h4>
+                                <div id="dcreditos">
+                                    <a href='creditos.html' class="creditos">
+                                        Créditos
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="rodape3">
+                                <div class="btn" onclick="toggleCarrinho()">
+                                    <img src="img/Protanopia/carrinhoprota.png" height="35px" width="35px"
+                                        class="prota2">
+                                    <img src="img/Deuteranopia/carrinhodeute.png" height="35px" width="35px"
+                                        class="deute2">
+                                    <img src="img/Tritanopia/carrinhotrita.png" height="35px" width="35px"
+                                        class="trita2">
+                                    <img src="img/monocromacia/carrinhomono.png" height="35px" width="35px"
+                                        class="mono2">
+                                    <img src="img/carrinho.png" height="35px" width="35px" class="vinor2">
+                                </div>
+
+                                <div class="cart">
+                                    <h2>Seu Carrinho</h2>
+                                    <div class="cart-items">
+                                        <p class="cart-empty">Seu carrinho está vazio.</p>
+                                    </div>
+                                    <p class="cart-total">Total: R$ 0,00</p>
+                                </div>
+                            </div>
+
+                            <script>
+
+                                // Função para remover todas as classes de acessibilidade
+                                function clearModes() {
+                                    document.body.classList.remove("prota-mode", "deute-mode", "trita-mode", "mono-mode");
+                                }
+
+                                function toggleProta() {
+                                    clearModes(); // Limpa as classes existentes
+                                    document.body.classList.add("prota-mode"); // Adiciona a classe Protanopia
+                                }
+
+                                function toggleDeute() {
+                                    clearModes(); // Limpa as classes existentes
+                                    document.body.classList.add("deute-mode"); // Adiciona a classe Deuteranopia
+                                }
+
+                                function toggleTrita() {
+                                    clearModes(); // Limpa as classes existentes
+                                    document.body.classList.add("trita-mode"); // Adiciona a classe Tritanopia
+                                }
+
+                                function toggleMono() {
+                                    clearModes(); // Limpa as classes existentes
+                                    document.body.classList.add("mono-mode"); // Adiciona a classe Monocromacia
+                                }
+
+                                function toggleVinor() {
+                                    clearModes(); // Remove todas as classes para voltar à visão normal
+                                    document.body.classList.add("vinor-mode");
+                                }
+
+                                function toggleOpcoes() {
+                                    const optDiv = document.querySelector('.opcoes');
+                                    if (optDiv.style.display === 'none' || optDiv.style.display === '') {
+                                        optDiv.style.display = 'block';
+                                    } else {
+                                        optDiv.style.display = 'none';
+                                    }
+                                }
+
+                                const items = [
+                                    { name: 'Torta', description: 'Torta recheada com sabores variados', price: 'R$12,00' },
+                                    { name: 'Coxinha', description: 'Coxinha crocante', price: 'R$08,00' },
+                                    { name: 'X-bacon', description: 'X-bacon crocante', price: 'R$22,00' },
+                                    { name: 'Pastel', description: 'Pastel recheada com sabores variados', price: 'R$12,00' },
+                                    { name: 'Esfiha', description: 'Esfiha crocante', price: 'R$08,00' },
+                                    { name: 'X-burguer', description: 'X-burguer crocante', price: 'R$22,00' },
+                                    { name: 'Batata frita', description: 'Batata frita crocante', price: 'R$10,00' },
+                                    { name: 'Trio de molhos', description: 'Ketchup, mostarda e maionese', price: 'R$09,00' },
+                                    { name: 'Bolo', description: 'Bolo de sabores variados', price: 'R$08,00' },
+                                    { name: 'Sorvete', description: 'Morango, chocolate, flocos ou creme', price: 'R$12,00' },
+                                    { name: 'Água', description: 'Água sem gás', price: 'R$04,00' },
+                                    { name: 'Suco', description: 'Morango, laranja, uva, abacaxi ou maracujá', price: 'R$07,00' },
+                                    { name: 'Refrigerante', description: 'Coca-Cola, Sprite, Guaraná ou Pepsi', price: 'R$07,00' },
+                                    { name: 'Vitamina', description: 'Banana, abacate, morango ou abacaxi', price: 'R$08,00' },
+                                    // Adicione mais itens aqui
+                                ];
+
+                                // Função para normalizar a string, removendo acentos
+                                function removeAccents(str) {
+                                    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                                }
+
+                                // Função para realizar a busca
+                                document.getElementById('search-form').addEventListener('submit', function (event) {
+                                    event.preventDefault();
+                                    const query = removeAccents(document.getElementById('search-bar').value.toLowerCase());
+                                    const resultsContainer = document.getElementById('results-container');
+                                    resultsContainer.innerHTML = ''; // Limpa os resultados anteriores
+
+                                    if (query) {
+                                        // Filtra os itens ignorando acentos
+                                        const filteredItems = items.filter(item =>
+                                            removeAccents(item.name.toLowerCase()).startsWith(query)
+                                        );
+
+                                        if (filteredItems.length > 0) {
+                                            filteredItems.forEach(item => {
+                                                const itemsRes = document.createElement('div');
+                                                itemsRes.classList.add('itemrespe');
+
+                                                itemsRes.innerHTML = `
+                    <p class='resupet'>${item.name}</p>
+                    <p class='resupe'>${item.description}</p>
+                    <p class='resupe'><strong>${item.price}</strong></p>
+                `;
+                                                resultsContainer.appendChild(itemsRes);
+                                            });
+                                        } else {
+                                            resultsContainer.innerHTML = `<p class='resupe'>Nenhum resultado encontrado para: "${query}"</p>`;
+                                        }
+                                    } else {
+                                        resultsContainer.innerHTML = '<p class="resupe">Por favor, insira um termo de pesquisa.</p>';
+                                    }
+                                });
+
+
+                            </script>
+                            <script>
+                                const cart = [];
+                                const cartItemsDiv = document.querySelector('.cart-items');
+                                const cartTotalDiv = document.querySelector('.cart-total');
+                                const cartEmptyMessage = document.querySelector('.cart-empty');
+
+                                function addToCart(itemName, itemPrice) {
+                                    const existingItem = cart.find(item => item.name === itemName);
+                                    if (existingItem) {
+                                        existingItem.quantity += 1; // Aumenta a quantidade
+                                    } else {
+                                        cart.push({ name: itemName, price: itemPrice, quantity: 1 }); // Adiciona novo item
+                                    }
+
+                                    updateCart();
+                                }
+
+                                function removeToCart(itemName, itemPrice) {
+                                    const existingItem = cart.find(item => item.name === itemName);
+
+                                    if (existingItem) {
+                                        if (existingItem.quantity > 1) {
+                                            // Reduz a quantidade
+                                            existingItem.quantity -= 1;
+                                        } else {
+                                            // Subtrai o preço do total antes de remover o item
+                                            const itemIndex = cart.indexOf(existingItem);
+                                            cart.splice(itemIndex, 1);
+                                        }
+                                    }
+
+                                    // Atualiza o carrinho e o total
+                                    updateCart();
+                                }
+
+
+
+                                function updateCart() {
+                                    cartItemsDiv.innerHTML = ''; // Limpa os itens do carrinho
+
+                                    if (cart.length === 0) {
+                                        // Se o carrinho estiver vazio, exibe a mensagem e zera o total
+                                        cartEmptyMessage.style.display = 'block'; // Certifique-se de que a mensagem está visível
+                                        cartTotalDiv.textContent = 'Total: R$ 0,00'; // Atualiza o total para zero
+                                    } else {
+                                        // Se houver itens no carrinho, oculta a mensagem de carrinho vazio
+                                        cartEmptyMessage.style.display = 'none'; // Oculta a mensagem de carrinho vazio
+                                        let total = 0;
+
+                                        // Recalcula o total e exibe os itens
+                                        cart.forEach(item => {
+                                            const itemTotal = item.price * item.quantity;
+                                            total += itemTotal;
+
+                                            const cartItemDiv = document.createElement('div');
+                                            cartItemDiv.classList.add('cart-item');
+                                            cartItemDiv.innerHTML = `
+                <span>${item.name} (x${item.quantity})</span>
+                <span>R$ ${itemTotal.toFixed(2)}</span>
+            `;
+                                            cartItemsDiv.appendChild(cartItemDiv);
+                                        });
+
+                                        // Atualiza o valor total do carrinho
+                                        cartTotalDiv.textContent = `Total: R$ ${total.toFixed(2)}`;
+                                    }
+                                }
+
+                                function toggleCarrinho() {
+                                    const cartDiv = document.querySelector('.cart');
+                                    if (cartDiv.style.display === 'none' || cartDiv.style.display === '') {
+                                        cartDiv.style.display = 'block'; // Mostra o carrinho
+                                    } else {
+                                        cartDiv.style.display = 'none'; // Oculta o carrinho
+                                    }
+                                }
+                            </script>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    <style>
+        table {
+            font-family: Rockwell;
+            font-size: 20px;
+            border-radius: 10px;
+            border-style: none;
+            background-color: #c7d0d8;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            flex-direction: row;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            color: #1a535c;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            display: flex;
+        }
+
+        .h3 {
+            margin: 10px;
+            margin-right: 15px;
+        }
+
+        h3 {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            border: 5px solid #006d77;
+            border-style: dashed;
+            color: #1a535c;
+        }
+
+        h4 {
+            color: #1a535c;
+            margin: 10px;
+            margin-right: 15px;
+        }
+
+        .container {
+            display: inline-flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .img {
+            display: flex;
+            position: absolute;
+            left: -25px;
+            top: -40px;
+        }
+
+        .titulo {
+            display: flex;
+            position: absolute;
+            color: #1a535c;
+            background-color: #c7d0d8;
+            font-size: 22px;
+            top: -15px;
+        }
+
+        .store-items {
+            display: flex;
+            position: relative;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #eitems {
+            display: inline-flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #ditems {
+            display: block;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #imgbandeja {
+            top: 0%;
+        }
+
+        .item {
+            display: flex;
+            position: relative;
+        }
+
+        .removebtn {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .addbtn,
+        .removebtn {
+            border: 3px solid #1a535c;
+            background-color: transparent;
+            border-radius: 999px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            display: flex;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .addbtn:hover,
+        .removebtn:hover {
+            background-color: #1a535c;
+        }
+
+        p {
+            color: #1a535c;
+            text-align: left;
+            font-size: 13px;
+            margin: 10px;
+        }
+
+        /* Barra de Pesquisa */
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .results-container {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
+
+        .result-item {
+            display: grid;
+            position: relative;
+            width: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .itemrespe {
+            display: block;
+            position: relative;
+            background-color: #f0f0f0;
+            text-align: center;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .resupe {
+            text-align: center;
+        }
+
+        .resupet {
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #search-bar {
+            width: 750px;
+            padding: 10px;
+            border-radius: 5px 0px 0px 5px;
+            border: 2px solid #006d77;
+            font-size: 13px;
+            color: #1a535c;
+            outline: none;
+        }
+
+        #search-button {
+            padding: 5px;
+            border: 5px solid #006d77;
+            border-radius: 0px 5px 5px 0px;
+            background-color: #006d77;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #search-button img {
+            vertical-align: middle;
+        }
+
+        .star-left,
+        .star-right {
+            position: relative;
+        }
+
+        .star-left {
+            left: 0;
+            margin-left: 0px;
+        }
+
+        .star-right {
+            right: 0;
+            margin-right: 0px;
+        }
+
+        input[type=text] {
+            border-radius: 10px;
+            border: 5px solid #ffffff;
+            background-color: #c7d0d8;
+        }
+
+        input[type=button] {
+            border: #c7d0d8;
+            background-color: transparent;
+            text-align: center;
+            position: relative;
+            top: -100px;
+            margin-left: 46%;
+            margin-right: 46%;
+        }
+
+        .rodape1 {
+            display: flex;
+            position: relative;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        #resquerda {
+            display: block;
+            position: relative;
+            left: 10%;
+        }
+
+        #rdireita {
+            display: block;
+            position: relative;
+            right: 10%;
+        }
+
+        .rpe {
+            color: #1a535c;
+            font-size: 13px;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .rpd {
+            color: #1a535c;
+            font-size: 13px;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .rodape2 {
+            display: flex;
+            position: relative;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        #cliente {
+            display: block;
+            position: relative;
+            left: 13%;
+        }
+
+        #acessibilidade {
+            display: block;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .opcoes {
+            display: none;
+            width: 55%;
+            border-radius: 10px;
+            padding: 5px;
+            box-shadow: 0 2px 5px #1a535c;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #006d77;
+            margin: 10px;
+        }
+
+        .config {
+            display: flex;
+            position: relative;
+            justify-content: space-evenly;
+        }
+
+        .opt {
+            color: #1a535c;
+            display: inline-flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            padding: 5px;
+            width: 80px;
+            height: 50px;
+            border: 0px;
+            border-radius: 10px;
+            background-color: #c7d0d8;
+            cursor: pointer;
+        }
+
+        #mapas {
+            display: block;
+            position: relative;
+            right: 15%;
+        }
+
+        #sobrecreditos {
+            display: flex;
+            width: 100%;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            margin-left: 8px;
+        }
+
+        #sobrecreditos h4 {
+            margin: 5px;
+        }
+
+        .sobre {
+            cursor: pointer;
+            text-decoration: none;
+            color: #1a535c;
+        }
+
+        .creditos {
+            cursor: pointer;
+            text-decoration: none;
+            color: #1a535c;
+        }
+
+        .rodape3 {
+            display: flex;
+            position: relative;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn {
+            display: flex;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+            border-radius: 999px;
+            border: 3px solid #1a535c;
+            cursor: pointer;
+        }
+
+        .cart {
+            display: none;
+            width: 50%;
+            border-radius: 5px;
+            padding: 5px;
+            box-shadow: 0 2px 5px #1a535c;
+            max-width: 300px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cart h2 {
+            text-align: center;
+            color: #1a535c;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .cart-items {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 10px;
+            color: #1a535c;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cart-item {
+            display: flex;
+            margin-bottom: 2px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cart-total {
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .cart-empty {
+            text-align: center;
+            font-size: 10px;
+            color: #1a535c;
+        }
+
+        #acessibilidade .vinor2 {
+            display: flex;
+        }
+
+        .vinor2 {
+            display: flex;
+        }
+
+        .prota2,
+        .deute2,
+        .trita2,
+        .mono2 {
+            display: none;
+        }
+
+        #stprota2,
+        #stdeute2,
+        #sttrita2,
+        #stmono2 {
+            display: none;
+        }
+
+        #sdprota2,
+        #sddeute2,
+        #sdtrita2,
+        #sdmono2 {
+            display: none;
+        }
+
+
+
+
+
+
+
+
+
+        /* Modo Visão Normal */
+
+        .vinor-mode #stprota2,
+        .vinor-mode #stdeute2,
+        .vinor-mode #sttrita2,
+        .vinor-mode #stmono2 {
+            display: none;
+        }
+
+        .vinor-mode #sdprota2,
+        .vinor-mode #sddeute2,
+        .vinor-mode #sdtrita2,
+        .vinor-mode #sdmono2 {
+            display: none;
+        }
+
+        .vinor-mode .prota2,
+        .vinor-mode .deute2,
+        .vinor-mode .trita2,
+        .vinor-mode .mono2 {
+            display: none;
+        }
+
+        .vinor-mode .vinor2 {
+            display: flex;
+        }
+
+        .vinor2 {
+            display: flex;
+        }
+
+        /* Modo Protanopia */
+
+        .prota-mode #sdvinor2,
+        .prota-mode #sddeute2,
+        .prota-mode #sdtrita2,
+        .prota-mode #sdmono2 {
+            display: none;
+        }
+
+        .prota-mode #stvinor2,
+        .prota-mode #stdeute2,
+        .prota-mode #sttrita2,
+        .prota-mode #stmono2 {
+            display: none;
+        }
+
+        .prota-mode .vinor2,
+        .prota-mode .deute2,
+        .prota-mode .trita2,
+        .prota-mode .mono2 {
+            display: none;
+        }
+
+        .prota-mode #acessibilidade .vinor2 {
+            display: none;
+        }
+
+        .prota-mode .prota2 {
+            display: flex;
+        }
+
+        .prota-mode #stprota2 {
+            display: flex;
+        }
+
+        .prota-mode #sdprota2 {
+            display: flex;
+        }
+
+        .prota-mode .opt {
+            background-color: #c8d1d9;
+        }
+
+        .prota-mode .opcoes {
+            box-shadow: 0 2px 5px #44545d;
+            background-color: #545e6c;
+        }
+
+        .prota-mode .opt {
+            color: #44545d;
+        }
+
+        .prota-mode table,
+        .prota-mode .titulo,
+        .prota-mode input[type=text] {
+            background-color: #c8d1d9;
+        }
+
+        .prota-mode h3 {
+            border: 5px solid #545E6C;
+            color: #44545D;
+            border-style: dashed;
+        }
+
+        .prota-mode .titulo,
+        .prota-mode p,
+        .prota-mode h1,
+        .prota-mode .sobre,
+        .prota-mode .creditos,
+        .prota-mode h4 {
+            color: #44545D;
+        }
+
+        .prota-mode .addbtn,
+        .prota-mode .removebtn,
+        .prota-mode .btn {
+            border: 3px solid #44545D;
+        }
+
+        .prota-mode .addbtn:hover,
+        .prota-mode .removebtn:hover {
+            background-color: #44545D;
+        }
+
+        .prota-mode #search-bar {
+            border: 2px solid #545E6C;
+            color: #44545D;
+        }
+
+        .prota-mode #search-button {
+            border: 5px solid #545E6C;
+            background-color: #545E6C;
+        }
+
+        .prota-mode .cart h2,
+        .prota-mode .cart-items {
+            color: #44545D;
+        }
+
+        .prota-mode .cart {
+            box-shadow: 0 2px 5px #44545D;
+        }
+
+        /* Modo Deuteranopia */
+
+        .deute-mode #sdvinor2,
+        .deute-mode #sdprota2,
+        .deute-mode #sdtrita2,
+        .deute-mode #sdmono2 {
+            display: none;
+        }
+
+        .deute-mode #stvinor2,
+        .deute-mode #stprota2,
+        .deute-mode #sttrita2,
+        .deute-mode #stmono2 {
+            display: none;
+        }
+
+        .deute-mode .vinor2,
+        .deute-mode .prota2,
+        .deute-mode .trita2,
+        .deute-mode .mono2 {
+            display: none;
+        }
+
+        .deute-mode #acessibilidade .vinor2 {
+            display: none;
+        }
+
+        .deute-mode .deute2 {
+            display: inherit;
+        }
+
+        .deute-mode #stdeute2 {
+            display: inherit;
+        }
+
+        .deute-mode #sddeute2 {
+            display: inherit;
+        }
+
+        .deute-mode .opt {
+            background-color: #c7d1d8;
+        }
+
+        .deute-mode .opcoes {
+            box-shadow: 0 2px 5px #44565d;
+            background-color: #4b5d70;
+        }
+
+        .deute-mode .opt {
+            color: #44565d;
+        }
+
+        .deute-mode table,
+        .deute-mode .titulo,
+        .deute-mode input[type=text] {
+            background-color: #C7D1D8;
+        }
+
+        .deute-mode h3 {
+            border: 5px solid #4B5D70;
+            color: #44565D;
+            border-style: dashed;
+        }
+
+        .deute-mode .titulo,
+        .deute-mode p,
+        .deute-mode h1,
+        .deute-mode .sobre,
+        .deute-mode .creditos,
+        .deute-mode h4 {
+            color: #44565D;
+        }
+
+        .deute-mode .addbtn,
+        .deute-mode .removebtn,
+        .deute-mode .btn {
+            border: 3px solid #44565D;
+        }
+
+        .deute-mode .addbtn:hover,
+        .deute-mode .removebtn:hover {
+            background-color: #44565D;
+        }
+
+        .deute-mode #search-bar {
+            border: 2px solid #4B5D70;
+            color: #44565D;
+        }
+
+        .deute-mode #search-button {
+            border: 5px solid #4B5D70;
+            background-color: #4B5D70;
+        }
+
+        .deute-mode .cart h2,
+        .deute-mode .cart-items {
+            color: #44565D;
+        }
+
+        .deute-mode .cart {
+            box-shadow: 0 2px 5px #44565D;
+        }
+
+        /* Modo Tritanopia */
+
+        .trita-mode #sdvinor2,
+        .trita-mode #sdprota2,
+        .trita-mode #sddeute2,
+        .trita-mode #sdmono2 {
+            display: none;
+        }
+
+        .trita-mode #stvinor2,
+        .trita-mode #stprota2,
+        .trita-mode #stdeute2,
+        .trita-mode #stmono2 {
+            display: none;
+        }
+
+        .trita-mode .vinor2,
+        .trita-mode .prota2,
+        .trita-mode .deute2,
+        .trita-mode .mono2 {
+            display: none;
+        }
+
+        .trita-mode #acessibilidade .vinor2 {
+            display: none;
+        }
+
+        .trita-mode .trita2 {
+            display: inherit;
+        }
+
+        .trita-mode #sttrita2 {
+            display: inherit;
+        }
+
+        .trita-mode #sdtrita2 {
+            display: inherit;
+        }
+
+        .trita-mode .opt {
+            background-color: #cad6ce;
+        }
+
+        .trita-mode .opcoes {
+            box-shadow: 0 2px 5px #345b55;
+            background-color: #006e61;
+        }
+
+        .trita-mode .opt {
+            color: #345b55;
+        }
+
+        .trita-mode table,
+        .trita-mode .titulo,
+        .trita-mode input[type=text] {
+            background-color: #CAD6CE;
+        }
+
+        .trita-mode h3 {
+            border: 5px solid #006E61;
+            color: #345B55;
+            border-style: dashed;
+        }
+
+        .trita-mode .titulo,
+        .trita-mode p,
+        .trita-mode h1,
+        .trita-mode .sobre,
+        .trita-mode .creditos,
+        .trita-mode h4 {
+            color: #345B55;
+        }
+
+        .trita-mode .addbtn,
+        .trita-mode .removebtn,
+        .trita-mode .btn {
+            border: 3px solid #345B55;
+        }
+
+        .trita-mode .addbtn:hover,
+        .trita-mode .removebtn:hover {
+            background-color: #345B55;
+        }
+
+        .trita-mode #search-bar {
+            border: 2px solid #006E61;
+            color: #345B55;
+        }
+
+        .trita-mode #search-button {
+            border: 5px solid #006E61;
+            background-color: #006E61;
+        }
+
+        .trita-mode .cart h2,
+        .trita-mode .cart-items {
+            color: #345B55;
+        }
+
+        .trita-mode .cart {
+            box-shadow: 0 2px 5px #345B55;
+        }
+
+        /* Modo Monocromacia */
+
+        .mono-mode #sdvinor2,
+        .mono-mode #sdprota2,
+        .mono-mode #sddeute2,
+        .mono-mode #sdtrita2 {
+            display: none;
+        }
+
+        .mono-mode #stvinor2,
+        .mono-mode #stprota2,
+        .mono-mode #stdeute2,
+        .mono-mode #sttrita2 {
+            display: none;
+        }
+
+        .mono-mode .vinor2,
+        .mono-mode .prota2,
+        .mono-mode .deute2,
+        .mono-mode .trita2 {
+            display: none;
+        }
+
+        .mono-mode #acessibilidade .vinor2 {
+            display: none;
+        }
+
+        .mono-mode .mono2 {
+            display: inherit;
+        }
+
+        .mono-mode #stmono2 {
+            display: inherit;
+        }
+
+        .mono-mode #sdmono2 {
+            display: inherit;
+        }
+
+        .mono-mode .opt {
+            background-color: #D0D0D0;
+        }
+
+        .mono-mode .opcoes {
+            box-shadow: 0 2px 5px #464646;
+            background-color: #5E5E5E;
+        }
+
+        .mono-mode .opt {
+            color: #464646;
+        }
+
+        .mono-mode table,
+        .mono-mode .titulo,
+        .mono-mode input[type=text] {
+            background-color: #D0D0D0;
+        }
+
+        .mono-mode h3 {
+            border: 5px solid #5E5E5E;
+            color: #464646;
+            border-style: dashed;
+        }
+
+        .mono-mode .titulo,
+        .mono-mode p,
+        .mono-mode h1,
+        .mono-mode .sobre,
+        .mono-mode .creditos,
+        .mono-mode h4 {
+            color: #464646;
+        }
+
+        .mono-mode .addbtn,
+        .mono-mode .removebtn,
+        .mono-mode .btn {
+            border: 3px solid #464646;
+        }
+
+        .mono-mode .addbtn:hover,
+        .mono-mode .removebtn:hover {
+            background-color: #464646;
+        }
+
+        .mono-mode #search-bar {
+            border: 2px solid #5E5E5E;
+            color: #464646;
+        }
+
+        .mono-mode #search-button {
+            border: 5px solid #5E5E5E;
+            background-color: #5E5E5E;
+        }
+
+        .mono-mode .cart h2,
+        .mono-mode .cart-items {
+            color: #464646;
+        }
+
+        .mono-mode .cart {
+            box-shadow: 0 2px 5px #464646;
+        }
+    </style>
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+
+</html>
