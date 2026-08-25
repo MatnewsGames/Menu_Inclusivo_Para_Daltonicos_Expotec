@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+    <style>
+        body {
+            font-family: Rockwell;
+            margin: 0;
+            padding: 20px;
+            background-color: #c7d0d8;
+            color: #1a535c;
+        }
+
+        p {
+            text-align: justify;
+            font-size: 15px;
+        }
+
+        h3 {
+            text-align: justify;
+            color: #1a535c;
+        }
+
+        #acessibilidade {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            width: 55px;
+            height: 55px;
+        }
+
+        .opcoes {
+            display: none;
+            width: 55%;
+            border-radius: 10px;
+            padding: 5px;
+            box-shadow: 0 2px 5px #1a535c;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #006d77;
+            margin: 10px;
+        }
+
+        .config {
+            display: flex;
+            position: relative;
+            justify-content: space-evenly;
+        }
+
+        .opt {
+            color: #1a535c;
+            display: inline-flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            padding: 5px;
+            width: 80px;
+            height: 50px;
+            border: 0px;
+            border-radius: 10px;
+            background-color: #c7d0d8;
+            cursor: pointer;
+        }
+
+        .voltar {
+            display: flex;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border: 0;
+            border-radius: 999px;
+            left: 10px;
+            background-color: #1a535c;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .voltar a {
+            text-decoration: none;
+            font-size: 30px;
+            color: #c7d0d8;
+        }
+
+        .voltar:hover {
+            background-color: #006d77;
+        }
+
+        #acessibilidade #vinor2 {
+            display: flex;
+        }
+
+        #deute2, #trita2, #mono2 {
+            display: none;
+        }
+
+        /* Modo Protanopia */
+
+        .prota-mode .voltar {
+            background-color: #44545d;
+        }
+
+        .prota-mode .voltar:hover {
+            background-color: #545e6c;
+        }
+
+        .prota-mode .voltar a {
+            color: #c8d1d9;
+        }
+
+        .prota-mode #mono2, #deute2, #trita2 {
+            display: none;
+        }
+
+        .prota-mode #acessibilidade #vinor2 {
+            display: none;
+        }
+
+        .prota-mode #prota2 {
+            display: inherit;
+        }
+
+        .prota-mode,
+        .prota-mode .opt {
+            background-color: #c8d1d9;
+        }
+
+        .prota-mode h3,
+        .prota-mode p {
+            color: #44545d;
+        }
+
+        .prota-mode .opcoes {
+            box-shadow: 0 2px 5px #44545d;
+            background-color: #545e6c;
+        }
+
+        .prota-mode .opt {
+            color: #44545d;
+        }
+
+        /* Modo Deuteranopia */
+
+        .deute-mode .voltar {
+            background-color: #44565d;
+        }
+
+        .deute-mode .voltar:hover {
+            background-color: #4b5d70;
+        }
+
+        .deute-mode .voltar a {
+            color: #c7d1d8;
+        }
+
+        .deute-mode #mono2, #trita2, #prota2 {
+            display: none;
+        }
+
+        .deute-mode #acessibilidade #vinor2 {
+            display: none;
+        }
+
+        .deute-mode #deute2 {
+            display: inherit;
+        }
+
+        .deute-mode,
+        .deute-mode .opt {
+            background-color: #c7d1d8;
+        }
+
+        .deute-mode h3,
+        .deute-mode p {
+            color: #44565d;
+        }
+
+        .deute-mode .opcoes {
+            box-shadow: 0 2px 5px #44565d;
+            background-color: #4b5d70;
+        }
+
+        .deute-mode .opt {
+            color: #44565d;
+        }
+
+        /* Modo Tritanopia */
+
+        .trita-mode .voltar {
+            background-color: #345b55;
+        }
+
+        .trita-mode .voltar:hover {
+            background-color: #006e61;
+        }
+
+        .trita-mode .voltar a {
+            color: #cad6ce;
+        }
+
+        .trita-mode #mono2, #deute2, #prota2 {
+            display: none;
+        }
+
+        .trita-mode #acessibilidade #vinor2 {
+            display: none;
+        }
+
+        .trita-mode #trita2 {
+            display: inherit;
+        }
+
+        .trita-mode,
+        .trita-mode .opt {
+            background-color: #cad6ce;
+        }
+
+        .trita-mode h3,
+        .trita-mode p {
+            color: #345b55;
+        }
+
+        .trita-mode .opcoes {
+            box-shadow: 0 2px 5px #345b55;
+            background-color: #006e61;
+        }
+
+        .trita-mode .opt {
+            color: #345b55;
+        }
+
+        /* Modo Monocromacia */
+
+        .mono-mode .voltar {
+            background-color: #464646;
+        }
+
+        .mono-mode .voltar:hover {
+            background-color: #5E5E5E;
+        }
+
+        .mono-mode .voltar a {
+            color: #D0D0D0;
+        }
+
+        .mono-mode #prota2, #deute2, #trita2 {
+            display: none;
+        }
+
+        .mono-mode #acessibilidade #vinor2 {
+            display: none;
+        }
+
+        .mono-mode #mono2 {
+            display: inherit;
+        }
+
+        .mono-mode,
+        .mono-mode .opt {
+            background-color: #D0D0D0;
+        }
+
+        .mono-mode h3,
+        .mono-mode p {
+            color: #464646;
+        }
+
+        .mono-mode .opcoes {
+            box-shadow: 0 2px 5px #464646;
+            background-color: #5E5E5E;
+        }
+
+        .mono-mode .opt {
+            color: #464646;
+        }
+
+        /* Modo Visão Normal */
+
+        .vinor-mode #vinor2 {
+            display: flex;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="voltar">
+        <a href="../menuinclusivo.html">←</a>
+    </div>
+
+    <center>
+        <table>
+            <h3>-Por que fazer um menu acessível para pessoas com daltonismo e com deficiência auditiva?</h3>
+            <p>
+                <br>Inclusão e Acessibilidade:<br>Criar um menu acessível promove a inclusão, permitindo que pessoas com deficiências visuais, como o daltonismo, ou auditivas tenham uma experiência completa ao usar seu site.<br>
+                <br>Melhoria na Experiência do Usuário:<br>Um cardápio que considera as diversas formas de percepção das
+                cores pode aprimorar consideravelmente a experiência do usuário, evitando confusões e frustrações.
+                Quando as cores são utilizadas de forma inadequada, pode se tornar complicado para alguém com daltonismo
+                perceber as diferenças entre opções ou categorias.<br>
+                <br>Compatibilidade com leitores de tela:<br>Pessoas com deficiência auditiva não são diretamente impactadas pela forma visual do menu, mas o uso de tecnologias assistivas, como leitores de tela, é comum para pessoas com múltiplas deficiências. Portanto, garantir que o menu seja facilmente interpretado por essas ferramentas ajuda na navegação. <br>
+                <br>Padrões de acessibilidade:<br>Seguir os princípios das Diretrizes de Acessibilidade para Conteúdo Web (WCAG) ajuda a garantir que o site atenda às necessidades de usuários com diferentes deficiências. Isso inclui:<br>
+- Para daltônicos: Contraste adequado de cor e uso de símbolos, formas ou textos que não dependem apenas da cor.<br>
+- Para deficientes auditivos: Se houver conteúdo multimídia no menu (como vídeos ou sons), fornecer legendas e transcrições.
+            </p><br>
+            <h3>-Você sabia? Existem 4 tipos de daltonismo, vamos conhecer um pouco sobre?</h3>
+            <p>
+                <br>Protanopia:<br> Pessoas com protanopia enfrentam dificuldades em identificar diferentes tons de
+                vermelho, que podem parecer-se mais com bege, cinza ou preto. Consideração no Design: É recomendável
+                evitar mesclas de vermelho com verde ou azul, pois pode ser complicado para esses indivíduos distinguir
+                entre essas cores.<br>
+                <br>Deuteranopia:<br> A deuteranopia é semelhante à protanopia, porém afeta a percepção do verde, que
+                pode ser percebido como bege ou cinza. Consideração no Design: É aconselhável evitar combinações de
+                verde com vermelho ou azul. A utilização de padrões ou texturas pode ser eficaz para diferenciar
+                elementos.<br>
+                <br>Tritanopia:<br>Indivíduos que sofrem de tritanopia enfrentam dificuldades para perceber nuances de
+                azul e amarelo. Eles podem ver o azul como uma tonalidade verde e o amarelo pode aparecer como um rosa
+                pálido. Consideração no Design: É aconselhável evitar a combinação excessiva de azul e amarelo. Prefira
+                utilizar contrastes de alta luminosidade entre as cores.<br>
+                <br>Monocromacia:<br>Pessoas com monocromacia enxergam o ambiente apenas em tons de cinza, sem a
+                capacidade de distinguir cores. Essa condição é bastante rara. Consideração no Design: Contar apenas com
+                cores para transmitir informações pode ser problemático. É fundamental utilizar ícones, padrões e textos
+                claros como alternativas.
+            </p>
+			<h3>-Existem também, tipos e graus de deficiência auditiva, são eles:</h3>
+			<p>
+                <br>Condutiva:<br>  Ocorre quando há um problema na transmissão do som do ouvido externo ou médio para o ouvido interno. Pode ser causada por infecções, acúmulo de cera ou danos no tímpano, por exemplo.<br>
+                <br>Neurossensorial:<br> Ocorre devido a problemas no ouvido interno (cóclea) ou no nervo auditivo, responsável por enviar sinais ao cérebro. Pode ser causada por fatores genéticos, envelhecimento, exposição a ruídos altos ou certas doenças.<br>
+                <br>Mista:<br> É uma combinação de perda condutiva e neurossensorial.<br>
+                <br>Leve:<br> Dificuldade para ouvir sons suaves ou conversas em ambientes barulhentos.<br>
+                <br>Moderada:<br> Dificuldade para ouvir conversas normais, especialmente em ambientes ruidosos.<br>
+                <br>Severa:<br> A pessoa só consegue ouvir sons altos ou amplificados.
+<br>
+                <br>Profunda:<br> A pessoa não consegue ouvir a maioria dos sons e pode depender de leitura labial ou linguagem de sinais.
+            </p>
+        </table>
+
+        <div id="acessibilidade" onclick="toggleOpcoes()">
+            <img src="../img/Protanopia/acessibilidadeprota.png" height="55" width="55" id="prota2">
+            <img src="../img/Deuteranopia/acessibilidadedeute.png" height="55" width="55" id="deute2">
+            <img src="../img/Tritanopia/acessibilidadetrita.png" height="55" width="55" id="trita2">
+            <img src="../img/monocromacia/acessibilidademono.png" height="55" width="55" id="mono2">
+            <img src="../img/acessibilidade.png" height="55" width="55" id="vinor2">
+        </div>
+
+        <div class="opcoes">
+            <div class="config">
+                <div id="prota" class="opt" onclick="toggleProta()">
+                    Protanopia
+                </div>
+
+                <div id="deute" class="opt" onclick="toggleDeute()">
+                    Deuteranopia
+                </div>
+
+                <div id="trita" class="opt" onclick="toggleTrita()">
+                    Tritanopia
+                </div>
+
+                <div id="mono" class="opt" onclick="toggleMono()">
+                    Monocromacia
+                </div>
+
+                <div id="vinor" class="opt" onclick="toggleVinor()">
+                    Visão Normal
+                </div>
+            </div>
+        </div>
+
+    </center>
+	<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+
+<script>
+
+    function toggleOpcoes() {
+        const optDiv = document.querySelector('.opcoes');
+        if (optDiv.style.display === 'none' || optDiv.style.display === '') {
+            optDiv.style.display = 'block';
+        } else {
+            optDiv.style.display = 'none';
+        }
+    }
+
+    // Função para remover todas as classes de acessibilidade
+    function clearModes() {
+        document.body.classList.remove("prota-mode", "deute-mode", "trita-mode", "mono-mode");
+    }
+
+    function toggleProta() {
+        clearModes(); // Limpa as classes existentes
+        document.body.classList.add("prota-mode"); // Adiciona a classe Protanopia
+    }
+
+    function toggleDeute() {
+        clearModes(); // Limpa as classes existentes
+        document.body.classList.add("deute-mode"); // Adiciona a classe Deuteranopia
+    }
+
+    function toggleTrita() {
+        clearModes(); // Limpa as classes existentes
+        document.body.classList.add("trita-mode"); // Adiciona a classe Tritanopia
+    }
+
+    function toggleMono() {
+        clearModes(); // Limpa as classes existentes
+        document.body.classList.add("mono-mode"); // Adiciona a classe Monocromacia
+    }
+
+    function toggleVinor() {
+        clearModes(); // Remove todas as classes para voltar à visão normal
+        document.body.classList.add("vinor-mode");
+    }
+
+</script>
+
+</html>
